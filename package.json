@@ -1,0 +1,18 @@
+{
+  "name": "txt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"NODE_ENV=testing AWS_PROFILE=personal AWS_REGION=us-east-1 arc-sandbox",
+    "create": "AWS_PROFILE=personal AWS_REGION=us-east-1 arc-create",
+    "dns": "AWS_PROFILE=personal AWS_REGION=us-east-1 arc-dns",
+    "deploy": "AWS_PROFILE=personal AWS_REGION=us-east-1 arc-deploy"
+  },
+  "keywords": [],
+  "author": "Brian LeRoux <b@brian.io>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@architect/workflows": "^1.1.17"
+  }
+}
