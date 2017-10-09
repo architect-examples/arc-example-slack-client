@@ -1,0 +1,6 @@
+{
+  "name": "slack-txt-get-logout",
+  "dependencies": {
+    "@architect/functions": "^1.6.2"
+  }
+}
