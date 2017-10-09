@@ -3,6 +3,7 @@ slack-txt
 
 @html
 get /
+post /
 get /logout
 
 @domain

@@ -1,0 +1,7 @@
+{
+  "name": "slack-txt-post-index",
+  "dependencies": {
+    "@architect/functions": "^1.6.2",
+    "slack": "^9.0.5"
+  }
+}
