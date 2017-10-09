@@ -2,6 +2,7 @@ var slack = require('slack')
 var parallel = require('run-parallel')
 var layout = require('./_layout')
 
+
 module.exports = function _getMessages(req, res, next) {
   if (req.session.token && req.query.channel) {
     parallel([
@@ -22,8 +23,16 @@ module.exports = function _getMessages(req, res, next) {
         res(err)
       }
       else {
-         var channels = results.find(r=> r.hasOwnProperty('channels')).channels.map(chan=> `<option ${chan.id === req.query.channel? "selected":""} value=${chan.id}>${chan.name}<option>`).join('')
-        var messages = results.find(r=> r.hasOwnProperty('messages')).messages.map(msg=> `${msg.user} &rarr; ${msg.text}`).join('<br>')
+        function channelFmt(channel) {
+          return `<option ${channel.id === req.query.channel? "selected":""} value=${channel.id}>${channel.name}</option>`
+        }
+        function msgFmt(msg) {
+          return `${msg.user} &rarr; ${msg.text}`
+        }
+        var isChan = r=> r.hasOwnProperty('channels')
+        var isMsg = r=> r.hasOwnProperty('messages')
+        var channels = results.find(isChan).channels.map(channelFmt).join('')
+        var messages = results.find(isMsg).messages.map(msgFmt).join('<br>')
         res({
           html: layout(`<select onchange="window.location='/?channel=' + this.value">${channels}</select><hr>` + messages)
         })
