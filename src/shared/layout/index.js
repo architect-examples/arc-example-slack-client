@@ -64,7 +64,16 @@ module.exports = function layout(body) {
 <meta name=viewport content=width=device-width,initial-scale=1>
 <style>${style}</style>
 </head>
-<body>${body}</body>
+<body>
+${body}
+<nav>
+  <a href=/>workspaces</a>
+  <a href=/messages>messages</a>
+  <a href=/starred>starred</a>
+  <a href=/activity>activity</a>
+  <a href=/unread>unread</a>
+</nav>
+</body>
 </html>
 `
 }

@@ -1,0 +1,18 @@
+module.exports = [
+  'team:read',
+  'channels:history',
+  'channels:read',
+  'groups:history',
+  'groups:read',
+  'im:history',
+  'im:read',
+  'mpim:history',
+  'mpim:read',
+  'users:read',
+  'users:read.email',
+  'reactions:read',
+  'reactions:write',
+  'stars:read',
+  'stars:write',
+  'chat:write:user',
+]

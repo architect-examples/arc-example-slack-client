@@ -4,15 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=testing AWS_PROFILE=personal AWS_REGION=us-east-1 arc-sandbox",
+    "repl": "NODE_ENV=testing AWS_PROFILE=personal AWS_REGION=us-east-1 node scripts/repl.js",
+    "start": "NODE_ENV=testing AWS_PROFILE=personal AWS_REGION=us-east-1 nodemon --watch src --exec arc-sandbox",
     "create": "AWS_PROFILE=personal AWS_REGION=us-east-1 arc-create",
     "dns": "AWS_PROFILE=personal AWS_REGION=us-east-1 arc-dns",
-    "deploy": "AWS_PROFILE=personal AWS_REGION=us-east-1 arc-deploy"
+    "deploy": "AWS_PROFILE=personal AWS_REGION=us-east-1 arc-prototype-deploy"
   },
   "keywords": [],
   "author": "Brian LeRoux <b@brian.io>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@architect/workflows": "^1.1.17"
+    "@architect/workflows": "^1.1.23",
+    "arc-prototype-deploy": "^1.2.7",
+    "nodemon": "^1.12.1"
   }
 }

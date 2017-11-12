@@ -1,0 +1,6 @@
+{
+  "name": "slack-txt-get-starred",
+  "dependencies": {
+    "@architect/functions": "^1.6.2"
+  }
+}
